@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http;
+namespace App\Entity;
 use Rubix\ML\Datasets\Labeled;
 
 use Rubix\ML\Extractors\CSV;
@@ -28,7 +28,7 @@ class NeuralNetwork
 
   public function __construct()
   {     
-      $this->training_set = '../storage/app/public/datasets/winequality-red.csv';
+      $this->training_set = '../assets/datasets/winequality-red.csv';
       $this->delimiter = ';';
       var_dump($this->buildNeuralNetwork());
 
