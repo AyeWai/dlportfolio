@@ -20,4 +20,16 @@ class MainController extends AbstractController
             'display_nt' => 'MainController',
         ]);
     }
+
+    /**
+     * @Route("/neural-network")
+     */
+    public function setparameters(): Response
+    {
+        //$display_nt = new NeuralNetwork;
+
+        return $this->render('main/setparameters.html.twig', [
+            'display_nt' => 'SetParameters',
+        ]);
+    }
 }
