@@ -5,41 +5,30 @@
 
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 
-<div class="example-wrapper">
-<h2>Toggle 'em</h2>
-<ul class="tg-list">
-  <li class="tg-list-item">
-    <h4>Light</h4>
-    <input class="tgl tgl-light" id="cb1" type="checkbox"/>
-    <label class="tgl-btn" for="cb1"></label>
-  </li>
-  <li class="tg-list-item">
-    <h4>iOS</h4>
-    <input class="tgl tgl-ios" id="cb2" type="checkbox"/>
-    <label class="tgl-btn" for="cb2"></label>
-  </li>
-  <li class="tg-list-item">
-    <h4>Skewed</h4>
-    <input class="tgl tgl-skewed" id="cb3" type="checkbox"/>
-    <label class="tgl-btn" data-tg-off="OFF" data-tg-on="ON" for="cb3"></label>
-  </li>
-  <li class="tg-list-item">
-    <h4>Flat</h4>
-    <input class="tgl tgl-flat" id="cb4" type="checkbox"/>
-    <label class="tgl-btn" for="cb4"></label>
-  </li>
-  <li class="tg-list-item">
-    <h4>Flip</h4>
-    <input class="tgl tgl-flip" id="cb5" type="checkbox"/>
-    <label class="tgl-btn" data-tg-off="Nope" data-tg-on="Yeah!" for="cb5"></label>
-  </li>
-</ul>
-{{display_nt}}
+<div id="container"> <! -- #batchsize, optimizer, penality, epochs -->
+    <div id="control-panel">
+        <button id="play">Play</button><button id="next">Next</button>
+        <div class="input-group">
+            <label>Batchsize:</label>
+            <select id="rules"></select>
+        </div>
+        <div class="input-group">
+            <label>Optimizer:</label>
+            <select id="speed"></select>
+        </div>
+        <div class="input-group">
+            <label>Penality:</label>
+            <input id="grid-width" type="text" />
+        </div>
+        <div class="input-group">
+            <label>Epoch:</label>
+            <input id="grid-height" type="text" />
+        </div>
+        <button id="zoom-in">+ Zoom in</button><button id="zoom-out">- Zoom out</button>
+        <button id="seed">Seed</button><button id="reset">Reset</button>
+    </div>
+    <canvas id="canvas"></canvas>
 </div>
 {% endblock %}
 
@@ -47,7 +36,9 @@
      {{ encore_entry_link_tags('setparams') }}
  {% endblock %}
 
- {% block javascripts %}
+{% block javascripts %}
      {{ encore_entry_script_tags('setparams') }}
 {% endblock %}
+
+
 
