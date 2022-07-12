@@ -9,10 +9,20 @@ use App\Entity\NeuralNetwork;
 
 class MainController extends AbstractController
 {
+    
     /**
      * @Route("/home")
      */
-    public function index(): Response
+    public function home(): Response
+    {   
+
+        return $this->render('main/home.html.twig');
+    }
+
+    /**
+     * @Route("/neural-network")
+     */
+    public function neural_network(): Response
     {   
         $display_nt = new NeuralNetwork;
 
@@ -22,7 +32,7 @@ class MainController extends AbstractController
     }
 
     /**
-     * @Route("/neural-network")
+     * @Route("/parameters")
      */
     public function setparameters(): Response
     {
